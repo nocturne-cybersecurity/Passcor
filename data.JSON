@@ -1,0 +1,134 @@
+{
+  "categorias": {
+    "secuenciales_numericas": [
+      "123456",
+      "123456789",
+      "111111",
+      "000000",
+      "123123",
+      "123321",
+      "112233",
+      "121212",
+      "12341234",
+      "1234567890"
+    ],
+    "secuenciales_letras": [
+      "qwerty",
+      "qwertyuiop",
+      "asdfgh",
+      "asdfghjkl",
+      "zxcvbnm",
+      "qazwsx",
+      "qweasd",
+      "1q2w3e",
+      "1qaz2wsx",
+      "zaq12wsx"
+    ],
+    "nombres_propios": [
+      "daniel",
+      "alejandro",
+      "maria",
+      "jose",
+      "ana",
+      "carlos",
+      "juan",
+      "laura",
+      "david",
+      "patricia"
+    ],
+    "fechas_comunes": [
+      "01011980",
+      "12121990",
+      "25091985",
+      "01012000",
+      "31122021",
+      "15052022",
+      "20011999",
+      "01011970",
+      "01012010",
+      "31122020"
+    ],
+    "palabras_comunes": [
+      "password",
+      "contraseña",
+      "bienvenido",
+      "admin",
+      "usuario",
+      "bienvenido1",
+      "bienvenido123",
+      "tequiero",
+      "amor123",
+      "familia"
+    ],
+    "patrones_teclado": [
+      "!@#$%^",
+      "1qaz@WSX",
+      "1qazxsw2",
+      "!QAZ2wsx",
+      "zaq1@WSX",
+      "xsw2#EDC",
+      "!QAZ1qaz",
+      "1q2w3e4r",
+      "1q2w3e4r5t",
+      "1q2w3e4r5t6y"
+    ],
+    "deportes_equipos": [
+      "realmadrid",
+      "barcelona",
+      "liverpool",
+      "messi10",
+      "cr7ronaldo",
+      "futbol123",
+      "basquet23",
+      "tenis123",
+      "nadal123",
+      "federer"
+    ],
+    "nombres_marcas": [
+      "samsung",
+      "nokia",
+      "iphone",
+      "adidas",
+      "nike",
+      "cocacola",
+      "pepsi",
+      "microsoft",
+      "windows",
+      "linux"
+    ],
+    "series_peliculas": [
+      "harrypotter",
+      "starwars",
+      "breakingbad",
+      "gameofthrones",
+      "strangerthings",
+      "avengers",
+      "superman",
+      "batman123",
+      "spiderman",
+      "ironman"
+    ],
+    "combinaciones_comunes": [
+      "password123",
+      "welcome123",
+      "admin123",
+      "user123",
+      "qwerty123",
+      "iloveyou",
+      "princess",
+      "sunshine",
+      "monkey",
+      "dragon"
+    ]
+  },
+  "estadisticas": {
+    "total_contraseñas": 100,
+    "fecha_actualizacion": "2025-12-24",
+    "fuentes": [
+      "Listas de contraseñas más comunes",
+      "Filtraciones de datos públicas",
+      "Patrones comunes de teclado",
+      "Nombres y fechas comunes"
+    ]
+  }
+}
