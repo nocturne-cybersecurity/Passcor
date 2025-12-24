@@ -3,6 +3,8 @@
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+ ![banner](src/banner1.png)   ![banner](src/banner2.png)
+
 Passcor es una herramienta de línea de comandos para generar y validar contraseñas seguras, con protección contra ataques de fuerza bruta.
 
 ## Características
