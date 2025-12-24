@@ -24,7 +24,7 @@ Passcor es una herramienta de línea de comandos para generar y validar contrase
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/nocturne-cybersecurity/Passcor.git
-   cd gestor-contrasenas
+   cd Passcor
    ```
 
 2. Crea un entorno virtual (recomendado):
