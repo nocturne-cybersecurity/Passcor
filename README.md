@@ -29,7 +29,7 @@ Passcor es una herramienta de línea de comandos para generar y validar contrase
 
 2. Crea un entorno virtual (recomendado):
    ```bash
-   python -m venv venv
+   python3 -m venv venv
    source venv/bin/activate  # En Windows: venv\Scripts\activate
    ```
 
