@@ -23,7 +23,7 @@ Passcor es una herramienta de línea de comandos para generar y validar contrase
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/gestor-contrasenas.git
+   git clone https://github.com/nocturne-cybersecurity/Passcor.git
    cd gestor-contrasenas
    ```
 
@@ -43,7 +43,7 @@ Passcor es una herramienta de línea de comandos para generar y validar contrase
 ### Generador de Contraseñas
 
 ```bash
-python generador.py
+python3 generador.py
 ```
 
 Opciones disponibles:
@@ -63,7 +63,7 @@ En la terminal escribe python3 generador.py --help para ver las opciones disponi
 ### Validador de Contraseñas
 
 ```bash
-python validador.py
+python3 validador.py
 ```
 
 El validador ofrece un menú interactivo para:
@@ -82,7 +82,7 @@ El validador ofrece un menú interactivo para:
 ├── usuarios.db           # Base de datos SQLite (se crea automáticamente)
 ├── login_attempts.json   # Registro de intentos de inicio de sesión
 ├── requirements.txt      # Dependencias del proyecto
-└── README.md            # Este archivo
+└── README.md             # Este archivo que estas leyendo jaja
 ```
 
 ## Medidas de Seguridad
@@ -104,8 +104,3 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ## Autor
 
 - **Nocturne** - [GitHub](https://github.com/nocturne-cybersecurity)
-
-## Agradecimientos
-
-- A la comunidad de código abierto por las herramientas utilizadas
-- A todos los contribuyentes que ayudan a mejorar este proyecto
