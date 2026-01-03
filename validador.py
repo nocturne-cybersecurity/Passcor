@@ -98,17 +98,15 @@ class RateLimiter:
     
     def _get_client_ip(self) -> str:
         """Obtiene la IP del cliente de forma segura"""
-        # En un entorno real, obtendrías la IP de la solicitud HTTP
-        # Esto es un ejemplo simplificado
+
         import socket
         return socket.gethostbyname(socket.gethostname())
 
-# Inicializar el rate limiter
 try:
     rate_limiter = RateLimiter(
-        max_attempts=5,          # Máximo de intentos permitidos
-        window_minutes=15,       # Ventana de tiempo en minutos
-        ban_minutes=60           # Tiempo de bloqueo en minutos
+        max_attempts=5,          
+        window_minutes=15,       
+        ban_minutes=60           
     )
 except Exception as e:
     print(f"Error al inicializar el sistema de seguridad: {e}")
@@ -198,10 +196,9 @@ def mostrar_menu():
     print("3. Salir\033[0m\n")
 
 def main():
-    # Mostrar banner al inicio
+    
     mostrar_banner()
     
-    # Inicializar base de datos y cargar contraseñas comunes
     try:
         inicializar_bd()
         contraseñas_comunes = cargar_contraseñas('TXT/contras.txt')
@@ -252,34 +249,29 @@ def main():
             usuario = input("Usuario: ").strip()
             contraseña = getpass.getpass("Contraseña: ")
 
-            # Verificar rate limiting
             if not rate_limiter.register_attempt(usuario, False):
                 print("Demasiados intentos fallidos. Por favor, intente más tarde.")
-                time.sleep(2)  # Pequeño retraso para evitar fuerza bruta
+                time.sleep(2)
                 continue
 
-            # Verificar credenciales
             credenciales_validas = verificar_contraseña(usuario, contraseña)
             
-            # Registrar intento exitoso/fallido
             rate_limiter.register_attempt(usuario, credenciales_validas)
 
             if credenciales_validas:
                 print("\n" + "="*50)
                 print(f"¡Bienvenido, {usuario}!")
                 print("="*50 + "\n")
-                # Limpiar intentos fallidos después de un inicio de sesión exitoso
                 rate_limiter.register_attempt(usuario, True)
                 break
             else:
                 print("Usuario o contraseña incorrectos. Intente de nuevo.")
-                # Mostrar advertencia de seguridad después de varios intentos fallidos
                 ip = rate_limiter._get_client_ip()
                 if ip in rate_limiter.attempts:
                     remaining_attempts = rate_limiter.max_attempts - rate_limiter.attempts[ip].intentos
                     if remaining_attempts > 0:
                         print(f"Advertencia: Le quedan {remaining_attempts} intentos antes del bloqueo.")
-                time.sleep(1)  # Añadir retraso para evitar fuerza bruta
+                time.sleep(1)
 
         else:
             print("Opción no válida. Intente de nuevo.")
