@@ -107,11 +107,10 @@ Ejemplos:
     exit(0)
 
 def main():
-    # Mostrar banner al inicio
+    
     if len(sys.argv) == 1 or '--help' in sys.argv or '-h' in sys.argv:
         mostrar_banner()
     
-    # Configurar el parser de argumentos
     parser = argparse.ArgumentParser(
         description='Generador de contraseñas seguras',
         add_help=False,
@@ -119,7 +118,6 @@ def main():
         epilog='Ejemplos de uso:\n'
     )
     
-    # Añadir argumentos
     parser.add_argument(
         '-h', '--help', 
         action='store_true',
@@ -129,7 +127,7 @@ def main():
         '-l', '--longitud', 
         type=int, 
         default=16, 
-        help=argparse.SUPPRESS  # Ocultamos la ayuda por defecto
+        help=argparse.SUPPRESS 
     )
     parser.add_argument(
         '--sin-mayusculas', 
@@ -174,14 +172,14 @@ def main():
         help=argparse.SUPPRESS
     )
     
-    # Parsear argumentos
+    
     args = parser.parse_args()
     
-    # Mostrar ayuda si se solicita
+    
     if args.help:
         mostrar_ayuda()
         
-    # Validar longitud mínima
+    
     if args.longitud < 12:
         print("Error: La longitud mínima de la contraseña debe ser 12 caracteres.")
         print("Use --help para más información.")
@@ -194,7 +192,7 @@ def main():
         print("\033[1mGENERANDO CONTRASEÑA SEGURA...\033[0m")
         print("="*60)
         
-        # Mostrar animación de carga
+        
         def mostrar_carga():
             for _ in range(3):
                 for c in ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷']:
@@ -202,7 +200,7 @@ def main():
                     sys.stdout.flush()
                     time.sleep(0.1)
         
-        # Iniciar la generación
+        
         mostrar_llave()
         mostrar_carga()
         
@@ -216,17 +214,17 @@ def main():
                 excluir_ambiguos=args.excluir_ambiguos
             )
             
-            # Mostrar la contraseña generada
+        
             print("\n\n\033[1;32m✓ CONTRASEÑA GENERADA CON ÉXITO\033[0m")
             print("\n" + "-"*60)
             print(f"\033[1;36m{password}\033[0m")
             print("-"*60)
             
-            # Mostrar estadísticas
+        
             entropia = calcular_entropia(password)
             mostrar_estadisticas(entropia, len(password))
             
-            # Copiar al portapapeles si es una sola contraseña
+        
             if args.copiar and args.cantidad == 1:
                 try:
                     pyperclip.copy(password)
@@ -234,7 +232,6 @@ def main():
                 except Exception as e:
                     print(f"\n\033[1;31m✗ No se pudo copiar al portapapeles: {e}\033[0m")
             
-            # Pequeña pausa entre contraseñas si hay más de una
             if _ < args.cantidad - 1:
                 print("\n" + "-"*60)
                 print("Generando siguiente contraseña...\n")
